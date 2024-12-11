@@ -1,0 +1,113 @@
+# Build directories
+build/
+out/
+cmake-build-*/
+bin/
+lib/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.sdf
+*.opensdf
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.VC.db
+*.VC.opendb
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Clion
+.idea/
+cmake-build-debug/
+cmake-build-release/
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Shader Compilation Outputs
+*.spv
+
+# Shader Compilation Intermediates
+*.spv.d
+
+# Debugging and Profiling
+*.log
+*.pdb
+*.ilk
+
+# Shader Cache
+shader_cache/
+
+# Vulkan Specific
+imgui.ini
+*.spirv
+
+# Dependency Directories
+external/
+vendor/
+dependencies/
+
+# Performance Trace Files
+*.trace
+
+# Mac OS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Logging and Temporary Files
+*.log
+*.tmp
+temp/
+
+# Shader Compilation Temporary Files
+*.spv.tmp
+
+# Profiling and Performance Analysis
+*.prof
+*.perf
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# Additional Safety for Sensitive Files
+*.secret
+secrets.json
+
+# Backup and Swap Files
+*~
+*.swp
+*.swo
