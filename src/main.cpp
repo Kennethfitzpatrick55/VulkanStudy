@@ -1,5 +1,6 @@
 #include <GLFW/glfw3.h>
 #include<glfw_Initialization.h>
+#include<glfw_monitor.h>
 
 std::int32_t main(std::int32_t argc, gsl::zstring* argv) {
   const VulkanEngine::GLfwInitialization _glfw;
@@ -10,23 +11,14 @@ std::int32_t main(std::int32_t argc, gsl::zstring* argv) {
     glfwDestroyWindow(Window);
   });
 
-  std::int32_t monitor_count = 0;
-  GLFWmonitor** monitor_pointers = glfwGetMonitors(&monitor_count);
-  gsl::span<GLFWmonitor*> monitors(monitor_pointers, monitor_count);
+  
+  gsl::span<GLFWmonitor*> monitors = VulkanEngine::GetMonitors();
+  if (monitors.size() > 1)
+  {
+    VulkanEngine::MoveWindowToMonitor(Window, monitors[1]);
+  }
 
-  glm::ivec2 monitor_position;
-  glfwGetMonitorPos(monitors[2], &monitor_position.x, &monitor_position.y);
-
-
-  glm::ivec2 Window_Size;
-  glfwGetWindowSize(Window, &Window_Size.x, &Window_Size.y);
-
-  glm::ivec2 monitor_size;
-  glfwGetMonitorWorkarea(monitors[2],nullptr,nullptr, &monitor_size.x, &monitor_size.y);
-
-  glm::ivec2 window_new_postion = monitor_position + (monitor_size / 2) - (Window_Size / 2);
-  glfwSetWindowPos(Window, window_new_postion.x, window_new_postion.y);
-
+ 
   while (!glfwWindowShouldClose(Window)) {
     glfwPollEvents();
   }
