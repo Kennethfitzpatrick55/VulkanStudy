@@ -1,6 +1,5 @@
 #include "glfw_monitor.h"
-#include "GLFW/glfw3.h"  // Removed duplicate include
-
+#include "GLFW/glfw3.h"  
 namespace VulkanEngine {
 gsl::span<GLFWmonitor*> GetMonitors() {
   std::int32_t monitor_count = 0;

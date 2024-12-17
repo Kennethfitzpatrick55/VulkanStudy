@@ -2,7 +2,8 @@
 #include<glfw_Initialization.h>
 #include<glfw_monitor.h>
 
-std::int32_t main(std::int32_t argc, gsl::zstring* argv) {
+std::int32_t main(std::int32_t argc, gsl::zstring* argv)
+{
   const VulkanEngine::GLfwInitialization _glfw;
 
   gsl::not_null Window = glfwCreateWindow(800, 600, "Vulkan Engine", nullptr, nullptr);
