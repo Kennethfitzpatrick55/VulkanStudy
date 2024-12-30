@@ -1,15 +1,14 @@
 #pragma once
-namespace VulkanEngine {
 
-struct GLfwInitialization
-{
+namespace veng {
+
+struct GlfwInitialization {
  public:
-  GLfwInitialization();
-  ~GLfwInitialization();
+  GlfwInitialization();
+  ~GlfwInitialization();
 
-  GLfwInitialization(const GLfwInitialization&) = delete;
-
-  GLfwInitialization& operator=(const GLfwInitialization&) = delete;
+  GlfwInitialization(const GlfwInitialization&) = delete;
+  GlfwInitialization& operator=(const GlfwInitialization&) = delete;
 };
 
-}  // namespace VulkanEngine
+}  // namespace veng

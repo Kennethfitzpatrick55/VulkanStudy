@@ -1,18 +1,17 @@
-#include <glfw_initialization.h>
+#include <precomp.h>
 #include <GLFW/glfw3.h>
+#include <glfw_initialization.h>
 
+namespace veng {
 
-namespace VulkanEngine
-{
-  GLfwInitialization::GLfwInitialization()
-  {
-    if (glfwInit() != GLFW_TRUE) {
-       exit(EXIT_FAILURE);
-  }
-  }
-  GLfwInitialization::~GLfwInitialization()
-  {
-    glfwTerminate();
+GlfwInitialization::GlfwInitialization() {
+  if (glfwInit() != GLFW_TRUE) {
+    std::exit(EXIT_FAILURE);
   }
 }
-//namespace VulkanEngine
+
+GlfwInitialization::~GlfwInitialization() {
+  glfwTerminate();
+}
+
+}  // namespace veng
